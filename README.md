@@ -1,3 +1,3 @@
 # language-brocade package
 
-This package provides keyword highlighting for brocade configuration files.
+This package provides keyword highlighting for brocade configuration files in the Atom editor.
