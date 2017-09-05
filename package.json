@@ -1,0 +1,15 @@
+{
+  "name": "language-brocade",
+  "main": "./lib/language-brocade",
+  "version": "0.0.0",
+  "description": "Brocade Fastiron support in Atom",
+  "keywords": [
+  ],
+  "repository": "https://github.com/atom/language-brocade",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+  }
+}

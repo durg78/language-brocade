@@ -1,0 +1,139 @@
+scopeName: 'source.brocade-fastiron-config'
+name: 'Brocade FastIron'
+fileTypes: [
+  'bro'
+  'brocade'
+  'txt'
+]
+isDisabled: false
+patterns: [
+
+  {
+    include: '#line_comments'
+  }
+  {
+    include: '#negated_command'
+  }
+  {
+    include: '#Keywords'
+  }
+  {
+    include: '#string'
+  }
+  {
+    include: '#ip_address'
+  }
+  {
+    include: '#numbers'
+  }
+
+
+]
+
+
+
+repository:
+  Keywords:
+    patterns: [
+      {
+        comment: 'Keywords'
+        match:'\\s*(port-down-authenticated-mac-cleanup|port-statistics-reset-timestamp|preserve-acl-user-input-format|loop-detection-syslog-interval|prefix-delegation-information|med-topo-change-notifications|egress-acl-on-control-traffic|default-information-originate|strict-password-enforcement|client-to-client-reflection|snmp-notification-interval|show-service-number-in-log|maximum-delegated-prefixes|interactive-authentication|database-overflow-interval|authenticated-mac-age-time|multicast-nonstop-routing|hitless-route-purge-timer|default-passive-interface|bgp-redistribute-internal|webauth-redirect-address|symmetrical-flow-control|sflow-set-cpu-rate-limit|qos-internal-trunk-queue|power-savings-statistics|default-local-preference|switch-over-active-role|suppress-reject-message|source-guard-protection|password-authentication|next-hop-enable-default|mac-notification-buffer|loop-detection-interval|helper-use-responder-ip|gvrp-max-leaveall-timer|fast-start-repeat-count|dlb-internal-trunk-hash|symmetric-flow-control|stp-protect-statistics|route-reflector-client|register-suppress-time|max-neighbors-per-port|max-ifindex-per-module|management-vrf-disable|ingress-buffer-profile|hw-traffic-conditioner|group-router-interface|graft-retransmit-timer|filter-strict-security|fast-external-fallover|confidentiality-offset|authentication-retries|advertisement-interval|strict-management-vrf|short-path-forwarding|rfc1583-compatibility|priority-flow-control|permit-empty-password|packet-inerror-detect|next-bootstrap-server|mac-phy-config-status|local-user-protection|key-rollover-interval|ip6-route-default-vrf|igmp-snoop-group-addr|hardware-drop-disable|group-membership-time|force-migration-check|egress-buffer-profile|edge-port-auto-detect|disable-fast-failover|backup-hello-interval|auth-change-wait-time|arp-internal-priority|acl-per-port-per-vlan|soft-reconfiguration|relative-utilization|protected-link-group|prefix-advertisement|port-config-password|multicast-debug-mode|mld-snoop-group-addr|med-missing-as-worst|management-vrf-stats|learn-gratuitous-arp|ip-route-default-vrf|bootp-relay-max-hops|system-capabilities|super-user-password|save-current-values|retransmit-interval|register-probe-time|reference-bandwidth|preserve-statistics|poison-local-routes|password-min-length|password-encryption|netbios-name-server|max-total-neighbors|managed-config-flag|legacy-inline-power|key-server-priority|external-lsdb-limit|disable-pimsm-snoop|dhcp-default-router|delay-notifications|default-information|cli-command-history|buffer-sharing-full|auto-gen-link-local|system-description|static-mac-address|show-subnet-length|secure-mac-address|reverse-path-check|read-only-password|preforwarding-time|path-mtu-discovery|no-shutdown-status|next-hop-recursion|multicast-boundary|md5-authentication|maximum-preference|management-address|mac-authentication|mac-address-filter|link-error-disable|key-authentication|hold-down-interval|disable-igmp-snoop|directed-broadcast|designated-protect|delegated-prefixes|client-auto-detect|authentication-key|always-compare-med|virtual-interface|username-password|use-radius-server|transmit-interval|stp-protect-ports|store-and-forward|skip-interface-ra|server-identifier|scheduler-profile|router-preference|restart-vsrp-port|reserved-vlan-map|replay-protection|remove-private-as|re-authentication|qd-buffer-profile|password-override|other-config-flag|multicast-routing|med-power-via-mdi|max-response-time|max-group-address|mac-learn-disable|log-status-change|link-fault-signal|igmp-snoop-mcache|gvrp-base-vlan-id|enable-accounting|discover-interval|disable-mld-snoop|dhcp-gateway-list|default-originate|client-interfaces|cable-diagnostics|broadcast-request|bpdu-flood-enable|bootp-use-intf-ip|auth-default-vlan|aggregate-address|transmit-counter|suppress-warning|suppress-linklsa|source-interface|shutdown-disable|sflow-rate-limit|router-interface|route-precedence|relay-agent-echo|port-description|polling-interval|password-display|notification-mac|non-preempt-mode|no-dynamic-aging|mld-snoop-mcache|message-interval|med-capabilities|mac-notification|link-aggregation|install-firmware|inactivity-timer|hitless-failover|graceful-restart|frame-validation|forward-protocol|fast-convergence|excluded-address|enforce-first-as|dot1x-mka-enable|disable-flooding|coordinate-based|compare-routerid|client-isolation|client-interface|bsr-msg-interval|auth-fail-action|arp-ping-timeout|always-propagate|xwindow-manager|use-v2-checksum|update-lag-name|unknown-unicast|unicast-routing|trunk-threshold|tagged-priority|system-manifest|summary-address|rp-adv-interval|restricted-vlan|remote-loopback|password-format|optical-monitor|neighbor-filter|monitor-profile|max-packet-size|leave-wait-time|keep-alive-vlan|include-options|image-auto-copy|distribute-list|disable-aes-cbc|default-vlan-id|default-network|default-gateway|database-filter|continuous-mode|client-learning|boot-preference|block-applicant|autoneg-control|attempt-max-num|aggregated-vlan|admin-pt2pt-mac|admin-edge-port|acl-mirror-port|web-management|web-connection|use-acl-on-arp|transmit-delay|traffic-policy|traffic-filter|topology-group|timeout-action|tagged-packets|stp-bpdu-guard|startup-config|server-address|send-community|running-config|ring-interface|report-control|reauth-timeout|reachable-time|rate-limit-arp|query-interval|profile-config|priority-to-pg|pre-shared-key|poison-reverse|pimsm-snooping|pim6-hw-mcache|phy-fifo-depth|output-shaping|network-policy|multi-spx-port|max-reauth-req|maximum-prefix|max-frame-size|management-vrf|loop-detection|logging-enable|link-keepalive|leaveall-timer|ip-subnet-port|helper-address|hello-interval|error-interval|eee-statistics|dot1x-override|dos-protection|destination-ip|default-timers|default-metric|config-changed|client-pub-key|captive-portal|cache-lifetime|buffer-profile|broadcast-zero|block-learning|auth-vlan-mode|authentication|as-path-ignore|admin-distance|address-family|access-control|vrrp-extended|use-vrrp-path|uplink-switch|update-source|transmit-hold|tacacs-server|subscriber-id|static-ip-arp|spt-threshold|spanning-tree|show-portname|restart-ports|reauth-period|radius-server|radius-client|qd-descriptor|power-via-mdi|pim-hw-mcache|originator-id|ntp-interface|notifications|next-hop-self|netbios-proto|multi-spx-lag|msdp-sa-cache|mka-cfg-group|metric-offset|maximum-paths|login-timeout|login-retries|learn-default|ipv6-neighbor|ip6-route-vrf|holddown-time|forward-delay|force-version|flash-timeout|fast-leave-v2|fast-leave-v1|encapsulation|ebgp-multihop|dscp-priority|disable-aging|default-ports|dead-interval|critical-vlan|configuration|confederation|civic-address|bsr-candidate|bootp-gateway|authorization|virtual-port|virtual-link|vendor-class|suggested-id|static-group|speed-duplex|source-route|secure-setup|secure-login|rp-candidate|root-protect|rmon-entries|reinit-delay|redistribute|ra-hop-limit|qos-profiles|pub-key-file|primary-port|port-vlan-id|port-version|mixed-sp-wrr|port-control|pass-through|optimization|notification|member-group|max-sessions|max-duration|mac-movement|mac-age-time|local-userdb|load-sharing|load-balance|lacp-timeout|ipv6-address|ip-telephony|ip-route-vrf|include-port|import-users|ignore-8021p|host-max-num|hello-jitter|flow-control|filter-group|destinations|decnet-proto|config-group|cipher-suite|cb-configure|burst-normal|authenticate|associations|age-interval|address-pool|access-lists|access-group|verbose-off|uplink-span|update-time|unreachable|unconfigure|trap-source|tftp-server|tag-profile|system-name|switch-over|suppress-ra|stp-protect|stack-trunk|stack-ports|source-port|snmp-server|snmp-client|scale-timer|rp-embedded|router-port|remove-vlan|reauth-time|ra-lifetime|ra-interval|pvlan-trunk|prune-timer|prefix-list|port-region|pimsm-snoop|persistence|other-proto|optic-timer|ns-interval|nbr-timeout|mirror-port|min-version|metric-type|member-vlan|maxas-limit|master-vlan|mac-session|mac-address|loop-detect|location-id|link-config|leave-timer|ipx-network|initial-ttl|information|hw-resource|hello-timer|gvrp-enable|gre-tunnels|gig-default|filter-list|fail-action|dscp-remark|dr-priority|domain-name|diagnostics|dhcp-server|dhcp-client|destination|description|custom-text|connections|cli-command|certificate|auto-update|auth-filter|atalk-proto|as-override|application|acl-logging|access-list|accept-mode|web-server|vsrp-aware|voice-vlan|vlan-group|virtual-ip|user-login|trust-port|track-port|traceroute|system-max|statistics|static-arp|stack-port|ssm-enable|slow-start|rp-address|route-only|robustness|retransmit|rbridge-id|rate-limit|purge-time|public-key|prune-wait|prefixlist|pim-sparse|peer-group|pcp-remark|multicast6|mtu-ignore|mtu-exceed|metro-ring|mesh-group|mcache-age|max-sw-age|max-mroute|max-mcache|max-ip-mac|max-hw-age|mac-filter|login-page|log-enable|local-info|join-timer|ipv6-proto|ip-address|interfaces|inspection|initialize|identifier|hello-time|guest-vlan|forwarding|errdisable|encryption|enable-mka|dos-attack|dns-filter|dhcp-relay|delete-all|cycle-time|crypto-ssl|controller|connection|cluster-id|capability|auth-order|anycast-rp|allowas-in|all-client|acl-on-arp|accounting|whitelist|violation|table-map|symmetric|stp-group|source-ip|sa-filter|rpf-check|router-id|route-map|resources|remote-as|redirects|qd-buffer|pvst-mode|proxy-off|proxy-arp|privilege|port-span|port-name|peer-info|pe-enable|neighbors|named-acl|multipath|multicast|msdp-peer|mechanism|link-sync|keepalive|ipx-proto|ip-subnet|ipc_stats|ip6-route|interface|idle-time|hop-limit|histogram|ebgp-btsh|dual-mode|dot1x-mka|dampening|cpu-limit|community|cb-enable|broadcast|bandwidth|auto-lacp|auto-cost|auth-type|auth-mode|advertise|validate|username|untagged|transmit|tracking|test-mac|terminal|tag-type|spx-port|snooping|shutdown|settings|sessions|security|schedule|sa-cache|rpf-peer|rpf-mode|revision|resource|redirect|recovery|rconsole|pw-check|priority|pdu-rate|password|passcode|openflow|next-hop|neighbor|mdi-mdix|max-vlan|max-hops|max-ecmp|loopback|location|local-as|link-oam|ip-route|ip-proto|interval|instance|hostname|holdtime|group-ve|generate|force-up|failover|facility|ethernet|engineid|ecs-elin|distance|deadtime|counters|commands|buffered|breakout|bootfile|autosave|attempts|agent-ip|aes-only|add-vlan|adaptive|activate|zeroize|webpage|webauth|version|unmount|unicast|traffic|timeout|summary|ssm-map|spx-lag|service|running|rp-hash|rfc5424|retries|rel-ipc|receive|raguard|qos-tos|profile|pe-name|passive|options|network|monitor|max-req|maximum|max-age|mapping|logging|license|inbound|history|execute|exclude|dynamic|disable|default|counter|contact|console|cluster|chassis|binding|arp-age|address|weight|verify|values|tunnel|timers|telnet|tagged|tacacs|system|syslog|status|static|sparse|source|server|sample|rp-set|rp-map|router|remark|radius|policy|permit|output|option|mroute|module|mirror|meters|memory|mcache|master|macsec|legacy|ip-vrf|ipv6ip|ip-mac|ip-acl|inline|ignore|helper|groups|format|follow|export|erspan|enable|detail|deploy|delete|crypto|copper|config|client|buffer|border|banner|backup|active|802-1w|100-tx|100-fx|write|voice|users|trust|traps|timer|terms|table|stats|start|stack|sflow|scope|route|relay|range|pvlan|prune|proxy|power|ports|pe-id|peers|owner|optic|null0|mount|media|mecid|match|login|local|limit|lease|jumbo|ipsec|input|group|flows|flash|fixed|files|event|error|erase|entry|dot1x|disk0|dhcp6|dense|count|clock|clear|cache|cable|block|batch|alias|alarm|wpad|vsrp|vrrp|vrid|vlan|view|user|unit|type|tftp|task|stub|stop|span|sntp|snmp|show|rstp|rmon|rarp|port|pool|ping|peer|ospf|nssa|none|name|mstp|msdp|mode|mgmt|logo|llqi|lldp|kill|jitc|irdp|ipv6|info|igmp|icmp|ibgp|host|gvrp|fast|exec|echo|ebgp|dscp|dhcp|deny|data|cost|copy|boot|area|who|web|vrf|udp|ttl|tdr|tcp|ssl|ssh|spx|spi|set|scp|run|rpf|rip|qos|pod|pim|phy|orf|ntp|nsr|mtu|mld|mib|med|mdb|md5|mac|log|lag|key|ipc|gre|gig|fdp|eee|dns|dad|cpu|coa|cdp|bsr|bgp|as4|arp|age|add|aaa|map|to|ve|rd|on|nd|ip|in)\\s*'
+        name: 'entity.name.function.brocade'
+      }
+    ]
+  line_comments:
+    begin: '(^[ \\t]+)?(?=\\!|\\#)'
+    beginCaptures:
+      1:
+        name: 'punctuation.whitespace.comment.leading.brocade'
+    end: '(?!\\G)'
+    patterns: [
+      {
+        begin: '\\!|\\#'
+        beginCaptures:
+          0:
+            name: 'punctuation.definition.comment.brocade'
+        end: '\\n'
+        name: 'comment.line.number-sign.brocade'
+      }
+    ]
+  negated_command:
+    begin: '(^[ \\t]+)?(?=no\\s+)'
+    beginCaptures:
+      1:
+        name: 'variable.assignment.leading.brocade'
+    end: '(?!\\G)'
+    patterns: [
+      {
+        begin: 'no\\s+'
+        beginCaptures:
+          0:
+            name: 'variable.assignment.leading.brocade'
+        end: '\\n'
+        name: 'variable.assignment.leading.brocade'
+      }
+    ]
+  ip_address:
+    patterns: [
+      {
+        match: '\\s*((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\\/\\d+)?'
+        #match: '\\s*((?:\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3})(?:\\/\\d+)?)?\\s*'
+        name: 'constant.numeric.brocade'
+      }
+    ]
+  subnet_mask:
+    patterns: [
+      {
+        match: '\\s*\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\s*'
+        name: 'string.regexp.brocade'
+        comment: 'most common subnet masks'
+      }
+    ]
+  wildcard_mask:
+    patterns: [
+      {
+        match: '\\s*\\s0\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}[\/\\d{1,2}]*\\s*'
+        name: 'string.regexp.brocade'
+        comment: 'most common wildcard masks'
+      }
+    ]
+  ipv6_address:
+    patterns: [
+      {
+        match: '\\s*::(/\\d+)\\s*'
+        name: 'constant.numeric.brocade'
+      }
+      {
+        match: '((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:)))(%.+)?(/\\d+)?'
+        name: 'constant.numeric.brocade'
+      }
+    ]
+  numbers:
+    patterns: [
+        {
+          match: '\\s*([1-9]+[0-9]*|0)'
+          name: 'constant.numeric.integer.decimal.brocade'
+        }
+    ]
+  network_address:
+    patterns: [
+      {
+        include: '#ip_address'
+      }
+      {
+        include: '#ipv6_address'
+      }
+      {
+        include: '#subnet_mask'
+      }
+      {
+        include: '#wildcard_mask'
+      }
+    ]
+  string:
+    patterns: [
+      {
+        match: '\\s*((?:[a-zA-Z]+[a-zA-Z0-9_\\-\\/]*))\\s*'
+        name: 'string.brocade'
+      }
+    ]
